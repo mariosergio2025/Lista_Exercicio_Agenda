@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AgendaTelefonica.DbContext;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace AgendaTelefonica
 {
@@ -10,6 +12,7 @@ namespace AgendaTelefonica
             var build = WebApplication.CreateBuilder();
 
             build.Services.AddControllers();
+            build.Services.AddDbContext<MyDbContext>();
 
             var app = build.Build();
 
