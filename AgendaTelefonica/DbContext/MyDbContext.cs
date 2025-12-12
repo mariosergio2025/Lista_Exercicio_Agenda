@@ -10,9 +10,10 @@ namespace AgendaTelefonica.DbContext
     {
         public DbSet<AgendaItem> Todos => Set<AgendaItem>(); // apontando => para um Set Agenda
 
-        // Lembrar de fazer 1 vez o Add-Migration InitialMigration no powershell para iniciar o banco de dados
+        // Lembrar de fazer 1 vez o Add-Migration InitialMigration no  para iniciar o banco de dados
 
-        // depois de criado a Migrations - database update no shell
+        // depois de criado a Migrations -
+        // Update-Database (power manager console)
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // diretorio onde o windows deixa os aplicativos salvar dados - consever ver em %appdata%

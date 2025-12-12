@@ -1,10 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AgendaTelefonica.DbContext;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AgendaTelefonica.Controllers
 {
+    [Route("/api/agenda")]
     public class MyControllers : ControllerBase
     {
-        [Route("/api/agenda")]
+        private MyDbContext myDbContext;
+        
+        public MyControllers(MyDbContext myDbContext)
+        {
+            this.myDbContext = myDbContext; 
+        }
         [HttpGet]
         public ActionResult VerTodos()
         {
